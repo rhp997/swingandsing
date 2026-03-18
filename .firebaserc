@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "swingandsing"
-  }
+  },
+  "targets": {
+    "swingandsing": {
+      "hosting": {
+        "swingandsing": [
+          "swingandsing"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
