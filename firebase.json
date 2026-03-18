@@ -1,4 +1,9 @@
 {
+  "emulators": {
+    "hosting": {
+      "port": 5002
+    }
+  },
   "hosting": {
     "public": "public",
     "ignore": [

@@ -13,7 +13,7 @@ Tickets: https://www.eventbrite.com/e/sing-and-swing-tickets-1985255411377?utm-c
 ## Commands
 
 ```bash
-# Local dev server (localhost:5000)
+# Local dev server (localhost:5002)
 firebase emulators:start --only hosting --project swingandsing
 
 # Deploy to production
