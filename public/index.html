@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swing &amp; Sing | Golf Tournament &amp; Country Concert | April 11, 2026</title>
+  <meta name="description" content="1st Annual Swing & Sing Golf Tournament & Country Concert — Saturday, April 11, 2026 at Roswell Country Club. Benefiting the Republican Party of Chaves County.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark:  #1B5E20;
+      --green-mid:   #2E7D32;
+      --green-light: #388E3C;
+      --red:         #B71C1C;
+      --red-mid:     #C62828;
+      --gold:        #F9A825;
+      --dark:        #111;
+    }
+
+    body { font-family: Georgia, serif; }
+
+    /* ── Navbar ── */
+    .navbar { background: var(--green-dark) !important; }
+    .navbar-brand img { height: 58px; }
+    .nav-link { color: #fff !important; font-weight: 600; letter-spacing: .3px; }
+    .nav-link:hover { color: var(--gold) !important; }
+
+    /* ── Hero ── */
+    #hero {
+      background: linear-gradient(150deg, var(--green-dark) 0%, var(--green-mid) 45%, #7B1010 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='3' fill='%23ffffff08'/%3E%3C/svg%3E");
+    }
+    .hero-logo     { max-width: 300px; filter: drop-shadow(0 6px 24px rgba(0,0,0,.55)); }
+    .hero-eyebrow  { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: 1rem; }
+    .hero-details  {
+      background: rgba(0,0,0,.38);
+      border: 1px solid rgba(249,168,37,.3);
+      border-radius: 12px;
+      padding: .85rem 1.8rem;
+      display: inline-block;
+    }
+    .btn-tickets {
+      background: var(--red);
+      border: none;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: .8rem 2.5rem;
+      border-radius: 50px;
+      letter-spacing: .5px;
+      box-shadow: 0 4px 22px rgba(183,28,28,.55);
+      transition: all .3s;
+    }
+    .btn-tickets:hover {
+      background: #D32F2F;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(183,28,28,.65);
+    }
+
+    /* ── Section titles ── */
+    .section-title { color: var(--green-dark); font-weight: 700; }
+    .section-title::after {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 60px;
+      background: linear-gradient(90deg, var(--green-dark), var(--gold));
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* ── About ── */
+    #about { background: #f8f9fa; }
+    .quote-box {
+      border-left: 5px solid var(--gold);
+      background: #fff;
+      padding: 1.4rem 1.8rem;
+      font-style: italic;
+      font-size: 1.05rem;
+      box-shadow: 0 2px 14px rgba(0,0,0,.07);
+      border-radius: 0 8px 8px 0;
+    }
+    .goal-card {
+      background: var(--green-dark);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .goal-amount { font-size: 3.5rem; font-weight: 900; color: var(--gold); line-height: 1.1; }
+
+    /* ── Schedule ── */
+    #schedule { background: #fff; }
+    .sched-row {
+      display: flex;
+      align-items: flex-start;
+      padding: .9rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .sched-row:last-child { border-bottom: none; }
+    .sched-icon { font-size: 1.5rem; color: var(--gold); min-width: 2.4rem; margin-top: 2px; }
+    .sched-time { font-weight: 700; color: var(--green-dark); min-width: 160px; }
+
+    /* ── Guest ── */
+    #guest { background: var(--green-dark); color: #fff; }
+    .guest-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(249,168,37,.35);
+      border-radius: 18px;
+      padding: 2.5rem;
+    }
+    .guest-name { color: var(--gold); font-size: 2.6rem; font-weight: 700; }
+    .guest-fact {
+      background: rgba(0,0,0,.25);
+      border-radius: 10px;
+      padding: 1.2rem;
+      height: 100%;
+    }
+
+    /* ── Why Sponsor ── */
+    #why-sponsor { background: #f8f9fa; }
+    .benefit-row { display: flex; align-items: flex-start; margin-bottom: .9rem; }
+    .benefit-icon { font-size: 1.5rem; color: var(--gold); margin-right: .9rem; margin-top: 2px; }
+    .inclusions-box {
+      background: #e8f5e9;
+      border-left: 5px solid var(--green-dark);
+      border-radius: 0 10px 10px 0;
+      padding: 1.4rem 1.6rem;
+    }
+    .check-list { list-style: none; padding: 0; margin: 0; }
+    .check-list li { padding: .35rem 0; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .95rem; }
+    .check-list li:last-child { border-bottom: none; }
+    .check-list li::before { content: '✓ '; color: var(--green-dark); font-weight: 700; }
+
+    /* ── Sponsorship ── */
+    #sponsorship { background: #fff; }
+    .pkg-card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.1);
+      transition: transform .3s;
+      height: 100%;
+    }
+    .pkg-card:hover { transform: translateY(-6px); }
+    .pkg-card .card-header { padding: 1.6rem; text-align: center; }
+    .pkg-tier   { font-size: .8rem; letter-spacing: 2px; text-transform: uppercase; opacity: .85; }
+    .pkg-price  { font-size: 2rem; font-weight: 800; }
+    .hdr-table  { background: var(--green-dark); color: #fff; }
+    .hdr-prem   { background: var(--red-mid);    color: #fff; }
+    .hdr-title  { background: #1a1a1a;            color: var(--gold); }
+    .pkg-card .card-body .check-list li::before { color: var(--green-mid); }
+
+    /* ── Contact ── */
+    #contact { background: var(--dark); color: #fff; }
+    #contact .section-title { color: var(--gold); }
+    #contact .section-title::after { background: linear-gradient(90deg, var(--gold), var(--red)); }
+    .form-control, .form-select {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      border-radius: 8px;
+    }
+    .form-control:focus, .form-select:focus {
+      background: rgba(255,255,255,.13);
+      border-color: var(--gold);
+      color: #fff;
+      box-shadow: 0 0 0 .2rem rgba(249,168,37,.25);
+    }
+    .form-control::placeholder { color: rgba(255,255,255,.45); }
+    .form-select option { background: #222; color: #fff; }
+    .form-label { color: rgba(255,255,255,.7); font-size: .9rem; margin-bottom: .3rem; }
+    .btn-submit {
+      background: var(--green-mid);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      padding: .8rem 2rem;
+      border-radius: 50px;
+      transition: all .3s;
+    }
+    .btn-submit:hover { background: var(--green-light); transform: translateY(-2px); color: #fff; }
+    .cinfo a { color: var(--gold); text-decoration: none; }
+    .cinfo a:hover { text-decoration: underline; }
+    #form-success, #form-error { display: none; }
+
+    /* ── Footer ── */
+    footer {
+      background: #0a0a0a;
+      color: rgba(255,255,255,.5);
+      padding: 1.8rem 0;
+      text-align: center;
+      font-size: .85rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ NAVBAR ════════════════ -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#hero">
+      <img src="images/logo.png" alt="Swing &amp; Sing Golf Tournament">
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+        <li class="nav-item"><a class="nav-link" href="#guest">Special Guest</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sponsorship">Sponsorship</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-2">
+          <a class="btn btn-warning fw-bold px-3"
+             href="https://www.eventbrite.com/e/sing-and-swing-tickets-1985255411377?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=wsa&aff=ebdsshwebmobile"
+             target="_blank">Buy Tickets</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section id="hero">
+  <div class="container text-center text-white py-5 position-relative">
+    <img src="images/logo.png" alt="Swing &amp; Sing" class="hero-logo mb-4">
+    <p class="hero-eyebrow mb-2">1st Annual</p>
+    <h1 class="display-4 fw-bold mb-4">Golf Tournament &amp; Country Concert</h1>
+    <div class="hero-details mb-5">
+      <span class="me-4"><i class="bi bi-calendar-event-fill me-1"></i><strong>Saturday, April 11, 2026</strong></span>
+      <span><i class="bi bi-geo-alt-fill me-1"></i><strong>Roswell Country Club &bull; Roswell, NM</strong></span>
+    </div>
+    <div>
+      <a class="btn btn-tickets"
+         href="https://www.eventbrite.com/e/sing-and-swing-tickets-1985255411377?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=wsa&aff=ebdsshwebmobile"
+         target="_blank">
+        <i class="bi bi-ticket-perforated-fill me-2"></i>Get Your Tickets Now
+      </a>
+    </div>
+    <p class="mt-4 mb-0" style="color:rgba(255,255,255,.55)">Benefiting the Republican Party of Chaves County</p>
+  </div>
+</section>
+
+<!-- ════════════════ ABOUT ════════════════ -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <h2 class="section-title mb-4">About the Event</h2>
+        <p class="lead">Swing &amp; Sing is a one-of-a-kind golf tournament, dinner, and live country concert fundraiser designed to bring together business leaders, elected officials, and community supporters for an unforgettable day of networking and entertainment.</p>
+        <div class="quote-box my-4">
+          "Swing &amp; Sing is more than a fundraiser — it's a celebration of community, leadership, and conservative values. We're bringing together business leaders, supporters, and elected officials for a day of connection, competition, and live music."
+        </div>
+        <p>Join us at the <strong>Roswell Country Club</strong> on <strong>April 11, 2026</strong>. All proceeds support raising <strong>$30,000+</strong> for Republican candidates across New Mexico in upcoming statewide races.</p>
+        <p class="text-muted mb-0"><small>Expected attendance: 160+ dinner guests (20 tables of 8), golf teams, business leaders &amp; community influencers.</small></p>
+      </div>
+      <div class="col-lg-5">
+        <div class="goal-card">
+          <i class="bi bi-trophy-fill" style="font-size:3.5rem;color:var(--gold)"></i>
+          <h3 class="mt-3 mb-1 fw-bold">Fundraising Goal</h3>
+          <div class="goal-amount">$30,000+</div>
+          <p class="mt-2 mb-0" style="opacity:.75">Supporting Republican candidates across New Mexico</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SCHEDULE ════════════════ -->
+<section id="schedule" class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-5">Event Schedule</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="sched-row">
+          <i class="bi bi-flag-fill sched-icon"></i>
+          <div><div class="sched-time">Morning – 2:00 PM</div><div><strong>Golf Tournament</strong> — Roswell Country Club course</div></div>
+        </div>
+        <div class="sched-row">
+          <i class="bi bi-cup-hot-fill sched-icon"></i>
+          <div><div class="sched-time">Afternoon</div><div><strong>Dinner Reception</strong> — Networking with business leaders &amp; community supporters</div></div>
+        </div>
+        <div class="sched-row">
+          <i class="bi bi-star-fill sched-icon"></i>
+          <div><div class="sched-time">5:00 PM</div><div><strong>VIP Meet &amp; Greet</strong> — Exclusive access for VIP guests</div></div>
+        </div>
+        <div class="sched-row">
+          <i class="bi bi-mic-fill sched-icon"></i>
+          <div><div class="sched-time">5:30 PM</div><div><strong>Program &amp; Remarks</strong></div></div>
+        </div>
+        <div class="sched-row">
+          <i class="bi bi-music-note-beamed sched-icon"></i>
+          <div><div class="sched-time">Evening</div><div><strong>Live Country Concert</strong> — Featuring Trey Taylor</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SPECIAL GUEST ════════════════ -->
+<section id="guest" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5" style="color:var(--gold)">Special Guest Performer</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="guest-card text-center">
+          <i class="bi bi-music-note-list" style="font-size:3.5rem;color:var(--gold)"></i>
+          <div class="guest-name mt-3">Trey Taylor</div>
+          <p class="lead mt-2 mb-3" style="opacity:.85">A groundbreaking voice in country music</p>
+          <hr style="border-color:rgba(249,168,37,.3)">
+          <div class="row g-3 mt-1">
+            <div class="col-md-6">
+              <div class="guest-fact">
+                <i class="bi bi-award-fill" style="font-size:1.6rem;color:var(--gold)"></i>
+                <p class="mt-2 mb-0">Youngest African American to sign with a country music label</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="guest-fact">
+                <i class="bi bi-people-fill" style="font-size:1.6rem;color:var(--gold)"></i>
+                <p class="mt-2 mb-0">Collaborator with Ronnie Milsap and Glenn Campbell's daughter Debby</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ WHY SPONSOR ════════════════ -->
+<section id="why-sponsor" class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-5">Why Sponsor?</h2>
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-6">
+        <div class="benefit-row">
+          <i class="bi bi-people-fill benefit-icon"></i>
+          <div><strong>Direct access</strong> to engaged community leaders and high-income business owners</div>
+        </div>
+        <div class="benefit-row">
+          <i class="bi bi-megaphone-fill benefit-icon"></i>
+          <div><strong>Brand exposure</strong> in front of decision-makers who matter</div>
+        </div>
+        <div class="benefit-row">
+          <i class="bi bi-eye-fill benefit-icon"></i>
+          <div><strong>Alignment</strong> with a high-visibility political and community event</div>
+        </div>
+        <div class="benefit-row">
+          <i class="bi bi-broadcast-pin benefit-icon"></i>
+          <div><strong>Multi-channel exposure</strong> — print, digital, and live event recognition</div>
+        </div>
+        <div class="benefit-row">
+          <i class="bi bi-camera-video-fill benefit-icon"></i>
+          <div><strong>On-stage recognition</strong> during program and sponsor recognition during concert</div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="inclusions-box">
+          <h5 class="fw-bold mb-3" style="color:var(--green-dark)">All Sponsor Packages Include:</h5>
+          <ul class="check-list">
+            <li>Logo on event flyer</li>
+            <li>Logo on printed posters</li>
+            <li>Social media advertisement mentions</li>
+            <li>Logo placement in digital promotions</li>
+            <li>On-stage recognition during program</li>
+            <li>Sponsor recognition during concert</li>
+            <li>Live audience + digital impressions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SPONSORSHIP PACKAGES ════════════════ -->
+<section id="sponsorship" class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-2">Sponsorship Packages</h2>
+    <p class="text-muted mb-5">Table availability is limited to 20 tables of 8 — secure your spot early.</p>
+    <div class="row g-4">
+
+      <!-- $3,000 Table -->
+      <div class="col-lg-4 d-flex">
+        <div class="pkg-card card w-100">
+          <div class="card-header hdr-table">
+            <div class="pkg-tier">Table Sponsor</div>
+            <div class="pkg-price">$3,000</div>
+          </div>
+          <div class="card-body p-4 d-flex flex-column">
+            <ul class="check-list flex-grow-1">
+              <li>1 Reserved Table (8 seats)</li>
+              <li>Company Banner Displayed at Event</li>
+              <li>Logo on Step &amp; Repeat Backdrop</li>
+              <li>Golf Team Entry</li>
+              <li>Logo on Event Social Media Cover Image</li>
+              <li>Logo Included in Promotional Video</li>
+              <li>All Standard Inclusions</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-success fw-bold w-100 mt-4">Become a Sponsor</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- $4,000 Premium -->
+      <div class="col-lg-4 d-flex">
+        <div class="pkg-card card w-100">
+          <div class="card-header hdr-prem">
+            <div class="pkg-tier">Premium Sponsor</div>
+            <div class="pkg-price">$4,000</div>
+          </div>
+          <div class="card-body p-4 d-flex flex-column">
+            <ul class="check-list flex-grow-1">
+              <li>1 Reserved Table (8 seats)</li>
+              <li>Company Banner Displayed at Event</li>
+              <li>Logo on Step &amp; Repeat Backdrop</li>
+              <li>Golf Team Entry</li>
+              <li>Logo on Event Social Media Cover Image</li>
+              <li>Logo Included in Promotional Video</li>
+              <li>Priority Logo Placement on Marketing Materials</li>
+              <li>All Standard Inclusions</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-danger fw-bold w-100 mt-4">Become a Sponsor</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- $5,000 Title -->
+      <div class="col-lg-4 d-flex">
+        <div class="pkg-card card w-100" style="border:2px solid var(--gold) !important">
+          <div class="card-header hdr-title position-relative">
+            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2" style="font-size:.7rem">Most Exclusive</span>
+            <div class="pkg-tier" style="color:var(--gold)">Title-Level Sponsor</div>
+            <div class="pkg-price">$5,000</div>
+          </div>
+          <div class="card-body p-4 d-flex flex-column">
+            <ul class="check-list flex-grow-1">
+              <li>1 Reserved <em>Premium</em> Table (8 seats)</li>
+              <li>Golf Team Entry</li>
+              <li>Large Banner Placement</li>
+              <li>Large Featured Logo on Step &amp; Repeat</li>
+              <li>Logo on Social Media Cover Image</li>
+              <li>Logo Featured in Promotional Video</li>
+              <li>Enhanced Brand Recognition During Program</li>
+              <li>All Standard Inclusions</li>
+            </ul>
+            <a href="#contact" class="btn fw-bold w-100 mt-4 text-dark" style="background:var(--gold)">Become a Sponsor</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CONTACT ════════════════ -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Info -->
+      <div class="col-lg-5">
+        <h2 class="section-title mb-4">Get in Touch</h2>
+        <p style="opacity:.7">For tickets, sponsorship opportunities, or general inquiries, fill out the form or contact us directly.</p>
+        <div class="cinfo mt-4">
+          <p><i class="bi bi-person-fill me-2" style="color:var(--gold)"></i><strong>Kevin B. Berry</strong><br>
+             <span class="ms-4" style="opacity:.65">Event Chair, Republican Party of Chaves County</span></p>
+          <p><i class="bi bi-telephone-fill me-2" style="color:var(--gold)"></i><a href="tel:5759146670">575-914-6670</a></p>
+          <p><i class="bi bi-envelope-fill me-2" style="color:var(--gold)"></i><a href="mailto:chair@chavescounty.gop">chair@chavescounty.gop</a></p>
+          <p><i class="bi bi-globe me-2" style="color:var(--gold)"></i><a href="https://chavescounty.gop" target="_blank">chavescounty.gop</a></p>
+        </div>
+        <a class="btn btn-tickets w-100 text-center mt-3"
+           href="https://www.eventbrite.com/e/sing-and-swing-tickets-1985255411377?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=wsa&aff=ebdsshwebmobile"
+           target="_blank">
+          <i class="bi bi-ticket-perforated-fill me-2"></i>Buy Tickets on Eventbrite
+        </a>
+      </div>
+
+      <!-- Form -->
+      <div class="col-lg-7">
+        <div id="form-success" class="alert alert-success">
+          <i class="bi bi-check-circle-fill me-2"></i>Thank you! Your message has been sent. We'll be in touch soon.
+        </div>
+        <div id="form-error" class="alert alert-danger">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>Something went wrong. Please try again or email us directly.
+        </div>
+        <form id="contact-form">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" name="first_name" placeholder="John" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" name="last_name" placeholder="Smith" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" name="phone" placeholder="555-555-5555">
+            </div>
+            <div class="col-12">
+              <label class="form-label">I'm interested in</label>
+              <select class="form-select" name="interest">
+                <option value="">Select an option…</option>
+                <option>Purchasing Tickets</option>
+                <option>Table Sponsor ($3,000)</option>
+                <option>Premium Sponsor ($4,000)</option>
+                <option>Title-Level Sponsor ($5,000)</option>
+                <option>General Information</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" name="message" rows="4" placeholder="Tell us how we can help…"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-submit w-100" id="submit-btn">
+                <i class="bi bi-send-fill me-2"></i>Send Message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <div class="container">
+    <img src="images/logo.png" alt="Swing &amp; Sing" style="height:50px;margin-bottom:.5rem">
+    <p class="mb-1">1st Annual Swing &amp; Sing Golf Tournament &amp; Country Concert</p>
+    <p class="mb-2">Saturday, April 11, 2026 &bull; Roswell Country Club &bull; Roswell, NM</p>
+    <p class="mb-0" style="font-size:.75rem">Paid for by the Republican Party of Chaves County</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // Contact form → sends to redwave@chavescounty.gop via Formspree
+  // Sign up free at https://formspree.io, create a form pointing to redwave@chavescounty.gop,
+  // then replace YOUR_FORM_ID below with the ID from your dashboard.
+  const FORMSPREE = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending…';
+
+    const data = new FormData(this);
+    data.append('_replyto', data.get('email'));
+    data.append('_subject', 'Swing & Sing Inquiry: ' + (data.get('interest') || 'General'));
+
+    try {
+      const res = await fetch(FORMSPREE, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (res.ok) {
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-error').style.display  = 'none';
+        this.reset();
+      } else { throw new Error(); }
+    } catch {
+      document.getElementById('form-error').style.display   = 'block';
+      document.getElementById('form-success').style.display = 'none';
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="bi bi-send-fill me-2"></i>Send Message';
+    }
+  });
+</script>
+</body>
+</html>
