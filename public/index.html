@@ -129,6 +129,20 @@
       padding: 1.2rem;
       height: 100%;
     }
+    .guest-photo {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid rgba(249,168,37,.4);
+      box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    }
+    .guest-video {
+      width: 100%;
+      border-radius: 14px;
+      border: 2px solid rgba(249,168,37,.4);
+      box-shadow: 0 6px 24px rgba(0,0,0,.45);
+      display: block;
+    }
 
     /* ── Why Sponsor ── */
     #why-sponsor { background: #f8f9fa; }
@@ -368,21 +382,21 @@
         <section id="guest" class="py-5">
             <div class="container">
                 <h2 class="fw-bold text-center mb-5" style="color:var(--gold)">Special Guest Performer</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="guest-card text-center">
-                            <i class="bi bi-music-note-list" style="font-size:3.5rem;color:var(--gold)"></i>
-                            <div class="guest-name mt-3">Trey Taylor</div>
+                <div class="row g-4 align-items-start">
+                    <!-- Bio column -->
+                    <div class="col-lg-5">
+                        <div class="guest-card">
+                            <div class="guest-name">Trey Taylor</div>
                             <p class="lead mt-2 mb-3" style="opacity:.85">A groundbreaking voice in country music</p>
                             <hr style="border-color:rgba(249,168,37,.3)">
                             <div class="row g-3 mt-1">
-                                <div class="col-md-6">
+                                <div class="col-12">
                                     <div class="guest-fact">
                                         <i class="bi bi-award-fill" style="font-size:1.6rem;color:var(--gold)"></i>
                                         <p class="mt-2 mb-0">Youngest African American to sign with a country music label</p>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-12">
                                     <div class="guest-fact">
                                         <i class="bi bi-people-fill" style="font-size:1.6rem;color:var(--gold)"></i>
                                         <p class="mt-2 mb-0">Collaborator with Ronnie Milsap and Glenn Campbell's daughter Debby</p>
@@ -390,6 +404,25 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Photos below bio on desktop -->
+                        <div class="row g-3 mt-1">
+                            <div class="col-6">
+                                <img src="images/trey1.jpg" alt="Trey Taylor" class="guest-photo">
+                            </div>
+                            <div class="col-6">
+                                <img src="images/trey2.jpg" alt="Trey Taylor performing" class="guest-photo">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video column -->
+                    <div class="col-lg-7">
+                        <p class="text-center mb-2" style="color:var(--gold);font-weight:600;letter-spacing:.5px">
+                            <i class="bi bi-play-circle-fill me-1"></i> Watch — "Prisoner of the Highway"
+                        </p>
+                        <video class="guest-video" controls preload="metadata">
+                            <source src="images/Prisoner_of_the_Highway_V1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
