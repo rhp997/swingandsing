@@ -144,6 +144,29 @@
       display: block;
     }
 
+    /* ── Featured Speaker ── */
+    #speaker { background: #0f3d12; color: #fff; }
+    .speaker-photo {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid rgba(249,168,37,.4);
+      box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    }
+    .speaker-name { color: var(--gold); font-size: 2.2rem; font-weight: 700; }
+    .speaker-title { opacity: .8; font-size: 1rem; letter-spacing: .4px; }
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-weight: 600;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: .95rem;
+    }
+    .read-more-btn:hover { color: #ffc107; }
+
     /* ── Why Sponsor ── */
     #why-sponsor { background: #f8f9fa; }
     .benefit-row { display: flex; align-items: flex-start; margin-bottom: .9rem; }
@@ -246,6 +269,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#guest">Special Guest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#speaker">Guest Speaker</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#sponsorship">Sponsorship</a>
@@ -361,6 +387,7 @@
                                 <div class="sched-time">5:30 PM</div>
                                 <div>
                                     <strong>Program &amp; Remarks</strong>
+                                    — Featuring guest speaker Hon. Mayra Flores
                                 </div>
                             </div>
                         </div>
@@ -417,12 +444,41 @@
                     <!-- Video column -->
                     <div class="col-lg-7">
                         <p class="text-center mb-2" style="color:var(--gold);font-weight:600;letter-spacing:.5px">
-                            <i class="bi bi-play-circle-fill me-1"></i> Watch — "Prisoner of the Highway"
+                            <i class="bi bi-play-circle-fill me-1"></i>
+                            Watch — "Prisoner of the Highway"
                         </p>
-                        <video class="guest-video" controls preload="metadata">
+                        <video class="guest-video" controls preload="metadata" poster="images/video-thumb.png">
                             <source src="images/Prisoner_of_the_Highway_V1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ════════════════ FEATURED SPEAKER ════════════════ -->
+        <section id="speaker" class="py-5">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-5" style="color:var(--gold)">Featured Guest Speaker</h2>
+                <div class="row g-4 align-items-start justify-content-center">
+                    <div class="col-lg-4 col-md-5">
+                        <img src="images/Mayra.jpg" alt="Hon. Mayra Flores" class="speaker-photo">
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="speaker-name">Hon. Mayra Flores</div>
+                        <p class="speaker-title mt-1 mb-3">Former U.S. Congresswoman &bull; Founder, American Dream PAC</p>
+                        <hr style="border-color:rgba(249,168,37,.3)">
+                        <p class="mt-3">Hon. Mayra Flores embodies the American Dream. Born in Burgos, Tamaulipas, Mexico, she came to the United States at just six years old with her father, who gave their family the greatest gift of all: the chance to become proud, naturalized American citizens.</p>
+                        <p>Raised in a family of migrant workers, Mayra grew up in the cotton fields of the Rio Grande Valley, working alongside her parents to earn money for school clothes and supplies. Those long days under the Texas sun forged her relentless work ethic, her deep faith, and her unshakable belief that in America, anything is possible with hard work and determination.</p>
+                        <p>Mayra graduated from high school in San Benito and went on to become a Respiratory Care Practitioner, later earning a bachelor's degree in organizational leadership. She dedicated years to caring for children and seniors with chronic respiratory conditions, proving her commitment to service through action — not words.</p>
+                        <div id="mayra-more" style="display:none">
+                            <p>In June 2022, Mayra made history as the
+                                <strong>first Mexican-born woman ever elected to the United States House of Representatives</strong>, representing Texas's 34th District. In Congress, she fought for border security, family values, and the hardworking people of South Texas, serving on the Homeland Security and Agriculture Committees.
+                            </p>
+                            <p>Following her time in Congress, Mayra continued her mission as a Senior Advisor with the Texas Public Policy Foundation, championing school choice, family empowerment, and economic opportunity across Texas.</p>
+                            <p>Today, as a devoted mother and Founder of the American Dream PAC, Mayra is leading a movement to empower Hispanic communities nationwide fighting to ensure that every child in South Texas and across America has the same chance to succeed that she did.</p>
+                            <p>Mayra Flores is not just talking about the American Dream. She is living it — and fighting to protect it for generations to come.</p>
+                        </div>
+                        <button class="read-more-btn mt-1" onclick="(function(btn){var el=document.getElementById('mayra-more');var hidden=el.style.display==='none';el.style.display=hidden?'block':'none';btn.textContent=hidden?'Read Less \u25b2':'Read More \u25bc';})(this)">Read More &#9660;</button>
                     </div>
                 </div>
             </div>

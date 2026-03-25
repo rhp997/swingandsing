@@ -6,7 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 1st Annual **Swing & Sing** Golf Tournament & Country Concert — Saturday, April 11, 2026 at Roswell Country Club. Fundraiser benefiting the Republican Party of Chaves County. Goal: raise $30,000+ for Republican candidates across New Mexico.
 
-Event docs (press release, sponsor sheet) are in `/docs/`. The logo and press-release image are in `/images/` (also copied to `public/images/` for serving).
+Event docs (press release, sponsor sheet, speaker bios) are in `/docs/`. The logo and press-release image are in `/images/` (also copied to `public/images/` for serving).
+
+### Performers & Speakers
+- **Trey Taylor** — Special Guest Performer (country music). Photos: `public/images/trey1.jpg`, `trey2.jpg`. Video: `public/images/Prisoner_of_the_Highway_V1.mp4`.
+- **Hon. Mayra Flores** — Featured Guest Speaker (former U.S. Congresswoman, TX-34; Founder, American Dream PAC). Bio: `docs/Mayra-Flores-copy.pdf`. Photo: `public/images/Mayra.jpg`.
 
 Tickets: https://www.eventbrite.com/e/sing-and-swing-tickets-1985255411377?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=wsa&aff=ebdsshwebmobile
 
