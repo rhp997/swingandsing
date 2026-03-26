@@ -167,6 +167,73 @@
     }
     .read-more-btn:hover { color: #ffc107; }
 
+    /* ── Golf ── */
+    #golf { background: #fff; }
+    .golf-stat {
+      background: var(--green-dark);
+      color: #fff;
+      border-radius: 14px;
+      padding: 1.4rem 1rem;
+      text-align: center;
+    }
+    .golf-stat-num { font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1.1; }
+    .golf-stat-label { font-size: .82rem; text-transform: uppercase; letter-spacing: .8px; opacity: .85; margin-top: .25rem; }
+    .golf-prize-row {
+      display: flex;
+      align-items: center;
+      padding: .6rem 0;
+      border-bottom: 1px solid #e9ecef;
+      font-size: .97rem;
+    }
+    .golf-prize-row:last-child { border-bottom: none; }
+    .golf-prize-place { font-weight: 700; color: var(--green-dark); min-width: 80px; }
+    .golf-prize-amount { color: var(--red); font-weight: 700; margin-left: auto; }
+    .golf-flyer-thumb {
+      width: 80%;
+      border-radius: 14px;
+      border: 2px solid #dee2e6;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+      cursor: zoom-in;
+      transition: transform .25s, box-shadow .25s;
+      display: block;
+    }
+    .golf-flyer-thumb:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 32px rgba(0,0,0,.2);
+    }
+    .flyer-hint {
+      font-size: .82rem;
+      color: #6c757d;
+      text-align: center;
+      margin-top: .5rem;
+    }
+    /* Modal lightbox */
+    #flyerModal .modal-dialog { max-width: 90vw; }
+    #flyerModal .modal-content { background: #111; border: none; border-radius: 16px; }
+    #flyerModal .modal-body { padding: .5rem; }
+    #flyerModal img { width: 100%; border-radius: 12px; display: block; }
+    #flyerModal .btn-close { filter: invert(1); opacity: .8; }
+    .btn-register {
+      background: var(--green-dark);
+      border: none;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: .75rem 2.2rem;
+      border-radius: 50px;
+      letter-spacing: .4px;
+      box-shadow: 0 4px 18px rgba(27,94,32,.4);
+      transition: all .3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-register:hover {
+      background: var(--green-mid);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(27,94,32,.5);
+    }
+
     /* ── Why Sponsor ── */
     #why-sponsor { background: #f8f9fa; }
     .benefit-row { display: flex; align-items: flex-start; margin-bottom: .9rem; }
@@ -265,6 +332,9 @@
                             <a class="nav-link" href="#about">About</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#golf">Golf</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#schedule">Schedule</a>
                         </li>
                         <li class="nav-item">
@@ -345,6 +415,157 @@
                 </div>
             </div>
         </section>
+        <!-- ════════════════ GOLF ════════════════ -->
+        <section id="golf" class="py-5">
+            <div class="container">
+                <h2 class="section-title mb-2">Golf Tournament</h2>
+                <p class="text-muted mb-4">Three-person scramble &bull; 9:00 AM Shotgun Start &bull; Roswell Country Club</p>
+                <div class="row g-4 align-items-start">
+                    <!-- Left: details -->
+                    <div class="col-lg-7">
+                        <!-- Stats row -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-4">
+                                <div class="golf-stat">
+                                    <div class="golf-stat-num">18</div>
+                                    <div class="golf-stat-label">Holes of Golf</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="golf-stat">
+                                    <div class="golf-stat-num">3</div>
+                                    <div class="golf-stat-label">Person Scramble</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="golf-stat">
+                                    <div class="golf-stat-num">9 AM</div>
+                                    <div class="golf-stat-label">Shotgun Start</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Includes & Mulligans -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3" style="color:var(--green-dark)">
+                                    <i class="bi bi-check2-circle me-2"></i>Entry Includes
+                                </h5>
+                                <ul class="list-unstyled mb-0" style="font-size:.97rem">
+                                    <li class="py-1 border-bottom">
+                                        <i class="bi bi-flag-fill me-2 text-success"></i>18 holes of golf
+                                    </li>
+                                    <li class="py-1 border-bottom">
+                                        <i class="bi bi-cup-hot-fill me-2 text-success"></i>Lunch
+                                    </li>
+                                    <li class="py-1">
+                                        <i class="bi bi-music-note-beamed me-2 text-success"></i>Evening concert &amp; dinner
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3" style="color:var(--green-dark)">
+                                    <i class="bi bi-plus-circle me-2"></i>Mulligans
+                                </h5>
+                                <p class="mb-0" style="font-size:.97rem">Available for purchase on the day of the event.</p>
+                                <p class="mt-2 mb-0">
+                                    <span class="badge" style="background:var(--green-dark);font-size:.95rem">$10 each &bull; max 2 per player</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Prizes -->
+                        <h5 class="fw-bold mb-3" style="color:var(--green-dark)">
+                            <i class="bi bi-trophy-fill me-2" style="color:var(--gold)"></i>Prizes
+                        </h5>
+                        <div class="mb-3">
+                            <div class="golf-prize-row">
+                                <span class="golf-prize-place">
+                                    <i class="bi bi-trophy-fill me-1" style="color:var(--gold)"></i>1st Place
+                                </span>
+                                <span>Top team overall</span>
+                                <span class="golf-prize-amount">$200</span>
+                            </div>
+                            <div class="golf-prize-row">
+                                <span class="golf-prize-place">
+                                    <i class="bi bi-trophy-fill me-1" style="color:#adb5bd"></i>2nd Place
+                                </span>
+                                <span>Second team overall</span>
+                                <span class="golf-prize-amount">$150</span>
+                            </div>
+                            <div class="golf-prize-row">
+                                <span class="golf-prize-place">
+                                    <i class="bi bi-trophy-fill me-1" style="color:#cd7f32"></i>3rd Place
+                                </span>
+                                <span>Third team overall</span>
+                                <span class="golf-prize-amount">$100</span>
+                            </div>
+                            <div class="golf-prize-row">
+                                <span class="golf-prize-place">
+                                    <i class="bi bi-pin-angle-fill me-1 text-success"></i>Longest Putt
+                                </span>
+                                <span class="golf-prize-amount">
+                                    <i class="bi bi-award-fill" style="color:var(--gold)"></i>
+                                </span>
+                            </div>
+                            <div class="golf-prize-row">
+                                <span class="golf-prize-place">
+                                    <i class="bi bi-wind me-1 text-success"></i>Longest Drive
+                                </span>
+                                <span class="golf-prize-amount">
+                                    <i class="bi bi-award-fill" style="color:var(--gold)"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-4">
+                            <small>
+                                <i class="bi bi-exclamation-circle me-1"></i>Spots are limited — register your team early.
+                            </small>
+                        </p>
+                        <a href="downloads/golf-registration-form.pdf" target="_blank" class="btn-register">
+                            <i class="bi bi-clipboard2-check-fill me-2"></i>
+                            Register Your Team
+                        </a>
+                    </div>
+                    <!-- Right: flyer -->
+                    <div class="col-lg-5">
+                        <img
+                            src="images/golf-flyer-thumb.jpg"
+                            alt="Golf Tournament Flyer — click to enlarge"
+                            class="golf-flyer-thumb"
+                            data-bs-toggle="modal"
+                            data-bs-target="#flyerModal"
+                        >
+                        <p class="flyer-hint">
+                            <i class="bi bi-zoom-in me-1"></i>Click to enlarge
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Flyer lightbox modal -->
+        <div
+            class="modal fade"
+            id="flyerModal"
+            tabindex="-1"
+            aria-label="Golf flyer full size"
+            aria-modal="true"
+            role="dialog"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0 pt-2 pe-2">
+                        <button
+                            type="button"
+                            class="btn-close ms-auto"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="images/golf-flyer.jpg" alt="Golf Tournament Flyer">
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- ════════════════ SCHEDULE ════════════════ -->
         <section id="schedule" class="py-5">
             <div class="container">
@@ -447,7 +668,12 @@
                             <i class="bi bi-play-circle-fill me-1"></i>
                             Watch — "Prisoner of the Highway"
                         </p>
-                        <video class="guest-video" controls preload="metadata" poster="images/video-thumb.png">
+                        <video
+                            class="guest-video"
+                            controls
+                            preload="metadata"
+                            poster="images/video-thumb.png"
+                        >
                             <source src="images/Prisoner_of_the_Highway_V1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -471,8 +697,10 @@
                         <p>Raised in a family of migrant workers, Mayra grew up in the cotton fields of the Rio Grande Valley, working alongside her parents to earn money for school clothes and supplies. Those long days under the Texas sun forged her relentless work ethic, her deep faith, and her unshakable belief that in America, anything is possible with hard work and determination.</p>
                         <p>Mayra graduated from high school in San Benito and went on to become a Respiratory Care Practitioner, later earning a bachelor's degree in organizational leadership. She dedicated years to caring for children and seniors with chronic respiratory conditions, proving her commitment to service through action — not words.</p>
                         <div id="mayra-more" style="display:none">
-                            <p>In June 2022, Mayra made history as the
-                                <strong>first Mexican-born woman ever elected to the United States House of Representatives</strong>, representing Texas's 34th District. In Congress, she fought for border security, family values, and the hardworking people of South Texas, serving on the Homeland Security and Agriculture Committees.
+                            <p>
+                                In June 2022, Mayra made history as the
+                                <strong>first Mexican-born woman ever elected to the United States House of Representatives</strong>
+                                , representing Texas's 34th District. In Congress, she fought for border security, family values, and the hardworking people of South Texas, serving on the Homeland Security and Agriculture Committees.
                             </p>
                             <p>Following her time in Congress, Mayra continued her mission as a Senior Advisor with the Texas Public Policy Foundation, championing school choice, family empowerment, and economic opportunity across Texas.</p>
                             <p>Today, as a devoted mother and Founder of the American Dream PAC, Mayra is leading a movement to empower Hispanic communities nationwide fighting to ensure that every child in South Texas and across America has the same chance to succeed that she did.</p>

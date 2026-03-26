@@ -8,6 +8,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Event docs (press release, sponsor sheet, speaker bios) are in `/docs/`. The logo and press-release image are in `/images/` (also copied to `public/images/` for serving).
 
+### Downloads (`public/downloads/`)
+- `golf-registration-form.pdf` — flat (non-fillable) team registration form; opens in new tab via "Register Your Team" button. Making it fillable was attempted but not pursued.
+- `one-sheet.pdf` — event one-sheet
+- `sponsor-flyer.jpg` — sponsor flyer image
+
+### Golf Section Assets (`public/images/`)
+- `golf-flyer.jpg` — full-size tournament flyer (opens in modal lightbox)
+- `golf-flyer-thumb.jpg` — thumbnail used in the Golf section
+
 ### Performers & Speakers
 - **Trey Taylor** — Special Guest Performer (country music). Photos: `public/images/trey1.jpg`, `trey2.jpg`. Video: `public/images/Prisoner_of_the_Highway_V1.mp4`.
 - **Hon. Mayra Flores** — Featured Guest Speaker (former U.S. Congresswoman, TX-34; Founder, American Dream PAC). Bio: `docs/Mayra-Flores-copy.pdf`. Photo: `public/images/Mayra.jpg`.
