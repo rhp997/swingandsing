@@ -268,6 +268,12 @@
     .hdr-title  { background: #1a1a1a;            color: var(--gold); }
     .pkg-card .card-body .check-list li::before { color: var(--green-mid); }
 
+    /* ── Tickets ── */
+    #tickets { background: #f8f9fa; }
+    .hdr-ticket-single { background: var(--green-mid);  color: #fff; }
+    .hdr-ticket-team   { background: var(--red-mid);    color: #fff; }
+    .hdr-ticket-table  { background: #2c3e50;            color: #fff; }
+
     /* ── Contact ── */
     #contact { background: var(--dark); color: #fff; }
     #contact .section-title { color: var(--gold); }
@@ -350,7 +356,7 @@
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
                         <li class="nav-item ms-2">
-                            <a class="btn btn-warning fw-bold px-3" href="https://www.eventbrite.com/e/sing-and-swing-tickets-1985255411377?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=wsa&aff=ebdsshwebmobile" target="_blank">Buy Tickets</a>
+                            <a class="btn btn-warning fw-bold px-3" href="#tickets">Buy Tickets</a>
                         </li>
                     </ul>
                 </div>
@@ -843,6 +849,54 @@
                                     <li>All Standard Inclusions</li>
                                 </ul>
                                 <a href="https://square.link/u/HnJzMNQQ" target="_blank" class="btn fw-bold w-100 mt-4 text-dark" style="background:var(--gold)">Become a Title Sponsor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ════════════════ TICKETS ════════════════ -->
+        <section id="tickets" class="py-5">
+            <div class="container">
+                <h2 class="section-title mb-2">Tickets &amp; Registration</h2>
+                <p class="text-muted mb-5">Secure your spot at the 1st Annual Swing &amp; Sing — April 11, 2026.</p>
+                <div class="row g-4 justify-content-center">
+                    <!-- Single Dinner -->
+                    <div class="col-lg-4 d-flex">
+                        <div class="pkg-card card w-100">
+                            <div class="card-header hdr-ticket-single">
+                                <div class="pkg-tier">Single Dinner Ticket</div>
+                                <div class="pkg-price">$150</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <p class="flex-grow-1">Admission and dinner for one person.</p>
+                                <a href="https://square.link/u/WCG9RUnM" target="_blank" class="btn btn-outline-success fw-bold w-100 mt-2">Buy a Dinner Ticket</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Golf Team -->
+                    <div class="col-lg-4 d-flex">
+                        <div class="pkg-card card w-100">
+                            <div class="card-header hdr-ticket-team">
+                                <div class="pkg-tier">Golf Team</div>
+                                <div class="pkg-price">$500</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <p class="flex-grow-1">Use this link to pay for your team after completing and returning the registration form.</p>
+                                <a href="https://square.link/u/vKhiiC9T" target="_blank" class="btn btn-outline-danger fw-bold w-100 mt-2">Pay for Golf Team</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Table -->
+                    <div class="col-lg-4 d-flex">
+                        <div class="pkg-card card w-100">
+                            <div class="card-header hdr-ticket-table">
+                                <div class="pkg-tier">Table</div>
+                                <div class="pkg-price">$1,200</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <p class="flex-grow-1">Reserves eight seats at a table without sponsor-level benefits.</p>
+                                <a href="https://square.link/u/wwfSftuB" target="_blank" class="btn fw-bold w-100 mt-2 text-white" style="background:#2c3e50">Reserve a Table</a>
                             </div>
                         </div>
                     </div>
